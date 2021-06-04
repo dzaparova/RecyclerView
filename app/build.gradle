@@ -46,4 +46,5 @@ dependencies {
     implementation("androidx.fragment:fragment-ktx:$fragment_version")
     def vr_version="1.2.1"
     implementation "androidx.recyclerview:recyclerview:$vr_version"
+    implementation("androidx.cardview:cardview:1.0.0")
 }
