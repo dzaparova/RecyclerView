@@ -7,7 +7,7 @@ import android.os.Parcelable
 object Data {
     val items= listOf<Item>(
         Item(1,"Java",R.drawable.ic_baseline_anchor_24),
-        Item(2,"Kotlin",R.drawable.ic_baseline_android_24),
+        Item(2,"KotlinKotlinKotlinKotlinKotlin",R.drawable.ic_baseline_android_24),
         Item(3,"Dark",R.drawable.ic_baseline_airplanemode_active_24)
     )
 
@@ -16,10 +16,12 @@ object Data {
         ItemDetails(2,"Kotlin",R.drawable.ic_baseline_android_24,"JetBrain","Basicly"),
         ItemDetails(3,"Dark",R.drawable.ic_baseline_airplanemode_active_24,"Google","One language")
     )
-    fun getLongListOfItems():MutableList<Item>{
-        val list= mutableListOf<Item>()
-            for(i in 0..50){
-                list.addAll(items)
+    fun getLongListOfItems():MutableList<Any>{
+        val list= mutableListOf<Any>()
+            for(i in 1..100){
+                val addAll = list.addAll(items)
+                if (i % 3== 0)
+                list.add("https://dart.dev/tutorials")
 
         }
 
