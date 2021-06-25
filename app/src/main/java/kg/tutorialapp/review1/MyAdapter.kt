@@ -1,20 +1,22 @@
 package kg.tutorialapp.review1
 
+import android.content.DialogInterface
 import android.util.Log
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import kg.tutorialapp.review1.MyAdapter.Type.ADVERTISMENT
 import kg.tutorialapp.review1.MyAdapter.Type.ITEM
 
-class MyAdapter:RecyclerView.Adapter<BaseViewHolder<Any>> (){
+class MyAdapter(private val listener:OnClickListener):RecyclerView.Adapter<BaseViewHolder<Any>> (){
     private val items= arrayListOf<Any>()
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):BaseViewHolder<Any>{
 //        Log.i(MyAdapter.tag,"onCreateViewHolder")
        return when(viewType){
-          ITEM-> MyViewHolder.create(parent)
-          else->AddViewHolder.create(parent)
+          ITEM-> MyViewHolder.create(parent,listener)
+          else->AddViewHolder.create(parent,listener)
        }
     }
 
@@ -51,4 +53,12 @@ class MyAdapter:RecyclerView.Adapter<BaseViewHolder<Any>> (){
     companion object{
         const val tag="ADAPTER"
     }
+
+    interface OnClickListener{
+        fun OnItenClick(position: Int)
+        fun OnAddClick(position: Int)
+        fun OnButtonClick(position: Int)
+    }
 }
+
+

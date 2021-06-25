@@ -18,10 +18,14 @@ class AddViewHolder(itemView: View):BaseViewHolder<Any>(itemView){
        tv_url.text=item
     }
     companion object{
-        fun create(parent: ViewGroup): AddViewHolder {
+        fun create(parent: ViewGroup,listener: MyAdapter.OnClickListener): AddViewHolder {
             val view=LayoutInflater.from(parent.context)
                     .inflate(R.layout.item_add_viewholder,parent,false)
-            return AddViewHolder(view)
+            return AddViewHolder(view).apply {
+                itemView.setOnClickListener {
+                    listener.OnAddClick(absoluteAdapterPosition)
+                }
+            }
         }
     }
 

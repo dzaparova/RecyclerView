@@ -7,7 +7,7 @@ import android.os.Parcelable
 object Data {
     val items= listOf<Item>(
         Item(1,"Java",R.drawable.ic_baseline_anchor_24),
-        Item(2,"KotlinKotlinKotlinKotlinKotlin",R.drawable.ic_baseline_android_24),
+        Item(2,"KotlinKotlinKotlin",R.drawable.ic_baseline_android_24),
         Item(3,"Dark",R.drawable.ic_baseline_airplanemode_active_24)
     )
 
